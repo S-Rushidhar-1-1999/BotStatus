@@ -20,7 +20,7 @@ try:
     msg_id = config("MESSAGE_ID", cast=int)
     botlist = config("BOTS")
     bots = botlist.split()
-    abcde="/start /start2 /start3"
+    abcde="/start /start2 /start3 /start4 /start5 /start6 /start7 /start8 /start9"
     abcde1=abcde.split()
     session_name = str(session)
     user_bot = TelegramClient(StringSession(session_name), appid, apihash)
