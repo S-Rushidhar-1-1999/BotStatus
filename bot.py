@@ -57,9 +57,9 @@ async def BotzHub():
                             
                 if snt.id == msg:
                     print(f"@{bot} is down.")
-                    edit_text += f"@{bot}\n        └ **Down** ❌\n\n"
+                    edit_text += f"🖤 @{bot}\n        └ Down ❌\n\n"
                 elif snt.id + 1 == msg:
-                    edit_text += f"@{bot}\n        └ **Up** ✅\n\n"
+                    edit_text += f"💛 @{bot}\n        └ Up ✅\n\n"
                 await user_bot.send_read_acknowledge(bot)
                 c += 1
                 await user_bot.edit_message(int(chnl_id), msg_id, edit_text)
