@@ -27,7 +27,7 @@ try:
     print("Started")
 except Exception as e:
     print(f"ERROR\n{str(e)}")
-
+user_bot = TelegramClient(StringSession(session_name), appid, apihash)
 async def BotzHub():
     async with user_bot:
         while True:
