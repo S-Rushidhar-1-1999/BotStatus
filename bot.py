@@ -32,7 +32,7 @@ async def BotzHub():
     async with user_bot:
         while True:
             print("[INFO] starting to check uptime..")
-            await user_bot.edit_message(int(chnl_id), msg_id, "**📈 | Real-Time Bot Status.**\n\n`Performing a periodic check...`")
+            await user_bot.edit_message(int(chnl_id), msg_id, "**@BotzHub Bots Stats.**\n\n`Performing a periodic check...`")
             c = 0
             edit_text = "**📈 | Real-Time Bot Status.**\n\n"
             for bot in bots:
