@@ -39,7 +39,7 @@ async def BotzHub():
                 print(f"[INFO] checking @{bot}")
                 for i in abcde1:
                     snt = await user_bot.send_message(bot, i)
-                    await asyncio.sleep(5)
+                    await asyncio.sleep(3)
                         
                     history = await user_bot(GetHistoryRequest(
                         peer=bot,
