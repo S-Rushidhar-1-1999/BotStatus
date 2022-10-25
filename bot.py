@@ -20,7 +20,7 @@ try:
     msg_id = config("MESSAGE_ID", cast=int)
     botlist = config("BOTS")
     bots = botlist.split()
-    abcde="/start /start2 /start3 /start4 /start5 /start6 /start7 /start8 /start9"
+    abcde="/start /start1 /start2 /start3 /start4 /start5 /start6 /start7 /start8 /start9"
     abcde1=abcde.split()
     session_name = str(session)
     user_bot = TelegramClient(StringSession(session_name), appid, apihash)
@@ -39,7 +39,7 @@ async def BotzHub():
                 print(f"[INFO] checking @{bot}")
                 for i in abcde1:
                     snt = await user_bot.send_message(bot, i)
-                    await asyncio.sleep(10)
+                    await asyncio.sleep(5)
                         
                     history = await user_bot(GetHistoryRequest(
                         peer=bot,
