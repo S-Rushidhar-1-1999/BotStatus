@@ -20,6 +20,8 @@ try:
     msg_id = config("MESSAGE_ID", cast=int)
     botlist = config("BOTS")
     bots = botlist.split()
+    abcde="/start /start2 /start3"
+    abcde1=abcde.split()
     session_name = str(session)
     user_bot = TelegramClient(StringSession(session_name), appid, apihash)
     print("Started")
@@ -35,20 +37,24 @@ async def BotzHub():
             edit_text = "**@BotzHub Bots Stats.**\n\n"
             for bot in bots:
                 print(f"[INFO] checking @{bot}")
-                snt = await user_bot.send_message(bot, "/start")
-                await asyncio.sleep(10)
-
-                history = await user_bot(GetHistoryRequest(
-                    peer=bot,
-                    offset_id=0,
-                    offset_date=None,
-                    add_offset=0,
-                    limit=1,
-                    max_id=0,
-                    min_id=0,
-                    hash=0
-                ))
-                msg = history.messages[0].id
+                for i in abcde1:
+                    snt = await user_bot.send_message(bot, i)
+                    await asyncio.sleep(10)
+                        
+                    history = await user_bot(GetHistoryRequest(
+                        peer=bot,
+                        offset_id=0,
+                        offset_date=None,
+                        add_offset=0,
+                        limit=1,
+                        max_id=0,
+                        min_id=0,
+                        hash=0
+                    ))
+                    msg = history.messages[0].id 
+                    if snt.id + 1 == msg:
+                        break
+                            
                 if snt.id == msg:
                     print(f"@{bot} is down.")
                     edit_text += f"@{bot} - ❌\n"
